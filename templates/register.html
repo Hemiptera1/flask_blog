@@ -4,24 +4,19 @@
 		<form method="POST" action="">
 			{{ form.hidden_tag() }}
 			<fieldset class="form-group">
-				<legend class="border-bottom mb-4">Join Today Motherfucker!!</legend>
+				<legend class="border-bottom mb-4">Join Today!</legend>
 				<div class="form-group">
 					{{ form.username.label(class="form-control-label") }}
-
-					{{ if form.username.errors }}
+					{% if form.username.errors %}
 						{{ form.username(class="form-control in-invalid") }}
 						<div class="invalid-feedback">
 							{% for error in form.username.errors %}
-								<span>
-									{{ error }}
-								</span>
+								<span>{{ error }}</span>
 							{% endfor %}
 						</div>
 					{% else %}
 						{{ form.username(class="form-control in-invalid") }}
 					{% endif %}
-
-
 				</div>
 				<div class="form-group">
 					{{ form.email.label(class="form-control-label") }}
